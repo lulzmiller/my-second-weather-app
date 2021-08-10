@@ -16,12 +16,22 @@ LOGO
 </header>
 
 <form id="searchbar-container" action="">
-<input type="text" name="searchbar" id="searchbar-input">
-<input type="submit" value="">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+        <button type="submit" class="btn btn-outline-secondary">Go!</button>
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+      </div>
 </form>
 
 <section id="city-container">
-CITY
+<div class="row">
+    <div class="col-6">
+        City
+    </div>
+    <div class="col-6">
+        Temp
+    </div>
+</div>
 </section>
 <section id="forecast-container">
 FORECAST
