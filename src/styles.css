@@ -1,11 +1,85 @@
+/* colorpalette
+brown: #540B0E
+red: #9E2A2B
+yellow: #9E2A2B
+lighter yellow: #FFF3B0
+grey: #1B3137
+*/
+
 body {
     padding:10%;
+    font-family: 'Spartan', sans-serif;
+    font-weight:400;
+    background:#FFF9D6;
+}
+
+footer p {
+    color:rgba(27, 49, 55, 0.5);
+    font-size: 13px;
+    text-align: center;
+    margin: 0;
+}
+footer a {
+    text-decoration: none;
+    color:#9E2A2B;
+}
+footer a:hover{
+    color:#1B3137;
+    font-weight: 700;
+}
+
+#app-container {
+    background:#FFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 #app-container,#footer {
-    border:1px black solid;
+    border:1px solid transparent;
     border-radius: 10px;
     padding: 30px 30px;
 }
+#searchbar-container {
+    padding: 10px;
+}
+#searchbar {
+   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border: none;
+}
+ 
+#submit-btn, #crn-location-btn {
+    color:#540B0E;
+    border:none;
+    margin: 0 1px 0 2px;
+    padding: 5px 15px;
+    font-size: 25px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    transition: 200ms ease-in-out;
+}
+#submit-btn:hover, #crn-location-btn:hover {
+color: #fff;
+background:#540B0E ;
+}
+
+#city-container, #quote-container {
+    padding: 30px;
+}
+#city-container ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+
+#temperature-container {
+    font-size: 70px;
+    text-align: center;
+}
+
+#forecast-container h6 {
+    text-align: center;
+    padding: 30px;
+}
+
+
 #header,
 #searchbar-container, 
 #city-container, 
@@ -15,7 +89,6 @@ body {
 #footer {
     border:1px black solid;
     border-radius: 10px;
-    padding: 30px 30px;
     min-width: 300px;
 
     

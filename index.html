@@ -5,26 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="stylesheet" href="src/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/679df79acf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
 <div class="container">
     <div id="app-container">
 <header id="header">
 <a href="https://www.linkedin.com/in/luise-berge-m%C3%BCller-490864205/" target="_blank">
-    <img src="media/aboutme.svg" alt="Linkedin" width= 100px>
+    <img src="media/aboutme.svg" alt="Linkedin" width= 80px>
 </a>
 </header>
 
 <form id="searchbar-container" action="">
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
-        <button type="submit" class="btn btn-outline-secondary">
+        <input id="searchbar" type="text" class="form-control" placeholder="Check out another city.." aria-label="city-searchbar">
+        <button id="submit-btn" type="submit" class="btn btn-outline-secondary">
             <i class="fas fa-globe-americas"></i>
         </button>
-        <button class="btn btn-outline-secondary" type="button">
+        <button id="crn-location-btn" class="btn btn-outline-secondary" type="button">
             <i class="fas fa-map-pin">
         </i>
         </button>
@@ -56,11 +59,26 @@
 </section>
 <section id="forecast-container">
 <div class="row">
-    <div class="col-3 forecast">first</div>
-    <div class="col-3 forecast">second</div>
-    <div class="col-3 forecast">third</div>
-    <div class="col-3 forecast">forth</div>
-    <div class="col-3 forecast">fifth</div>
+    <div class="col-3 forecast">
+        <h6>
+            first
+        </h6>
+    </div>
+    <div class="col-3 forecast">
+        <h6> second </h6>
+    </div>
+    <div class="col-3 forecast"> 
+        <h6>
+            third 
+        </h6>
+    </div>
+    <div class="col-3 forecast"> 
+        <h6>
+            forth 
+        </h6>
+    </div>
+    
+
 </div>
 </section>
 <section id="quote-container">
