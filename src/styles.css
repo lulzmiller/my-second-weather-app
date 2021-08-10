@@ -1,0 +1,22 @@
+body {
+    padding:10%;
+}
+#app-container,#footer {
+    border:1px black solid;
+    border-radius: 10px;
+    padding: 30px 30px;
+}
+#header,
+#searchbar-container, 
+#city-container, 
+#forecast-container,
+#quote-container, 
+#test,
+#footer {
+    border:1px black solid;
+    border-radius: 10px;
+    padding: 30px 30px;
+    min-width: 300px;
+
+    
+}
