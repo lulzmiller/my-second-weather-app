@@ -7,34 +7,61 @@
     <title>Weather</title>
     <link rel="stylesheet" href="src/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/679df79acf.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
     <div id="app-container">
 <header id="header">
-LOGO
+<a href="https://www.linkedin.com/in/luise-berge-m%C3%BCller-490864205/" target="_blank">
+    <img src="media/aboutme.svg" alt="Linkedin" width= 100px>
+</a>
 </header>
 
 <form id="searchbar-container" action="">
     <div class="input-group">
         <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
-        <button type="submit" class="btn btn-outline-secondary">Go!</button>
-        <button class="btn btn-outline-secondary" type="button">Button</button>
+        <button type="submit" class="btn btn-outline-secondary">
+            <i class="fas fa-globe-americas"></i>
+        </button>
+        <button class="btn btn-outline-secondary" type="button">
+            <i class="fas fa-map-pin">
+        </i>
+        </button>
       </div>
 </form>
 
 <section id="city-container">
 <div class="row">
     <div class="col-6">
-        City
+        <h1> CityName </h1>
+        <ul>
+            <li>
+                <span>Tuesday 09:58, clear sky </span> 
+            </li>
+            <li> 
+                <span> Humidity: 89%, Wind: 2.68km/h </span>
+            </li>
+        </ul>
     </div>
     <div class="col-6">
-        Temp
+        <div id="temperature-container">
+            <span id="temp-icon">
+                <i class="fas fa-bolt"></i>
+            </span>
+            <span id="temperature">  24 *</span>
+    </div>
     </div>
 </div>
 </section>
 <section id="forecast-container">
-FORECAST
+<div class="row">
+    <div class="col-3 forecast">first</div>
+    <div class="col-3 forecast">second</div>
+    <div class="col-3 forecast">third</div>
+    <div class="col-3 forecast">forth</div>
+    <div class="col-3 forecast">fifth</div>
+</div>
 </section>
 <section id="quote-container">
 QUOTE
