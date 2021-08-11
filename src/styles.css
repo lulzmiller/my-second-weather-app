@@ -1,16 +1,17 @@
 /* colorpalette
 brown: #540B0E
 red: #9E2A2B
-yellow: #9E2A2B
+yellow: #FBBB2B
 lighter yellow: #FFF3B0
 grey: #1B3137
+antrasitt: #3A3A3A
 */
 
 body {
     padding:10%;
     font-family: 'Spartan', sans-serif;
     font-weight:400;
-    background:#FFF9D6;
+    background: radial-gradient( rgb(255, 241, 165) 1.9%, rgb(200, 125, 76) 49.7%, rgb(83, 54, 54) 100.5%);
 }
 
 footer p {
@@ -21,10 +22,20 @@ footer p {
 }
 footer a {
     text-decoration: none;
-    color:#9E2A2B;
+    color:#FBBB2B
 }
 footer a:hover{
     color:#1B3137;
+    font-weight: 700;
+}
+section a {
+    text-decoration: none;
+    color:#1B3137;
+    
+}
+section a:hover{
+    color:#FBBB2B;
+    font-size: 32px;
     font-weight: 700;
 }
 
@@ -40,7 +51,7 @@ footer a:hover{
     margin: 0 auto;
 }
 #searchbar-container {
-    padding: 20px 10px;
+    padding: 30px 10px;
 }
 #searchbar {
    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
@@ -74,6 +85,15 @@ margin: 0;
 #temperature-container {
     font-size: 70px;
     text-align: right;
+}
+#temp-icon {
+    color:#FBBB2B
+}
+#temperature-container .unit {
+    position: relative;
+    bottom:35px;
+    right: 15px;
+    font-size: 30px;
 }
 
 .forecast {
