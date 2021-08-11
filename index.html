@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
@@ -37,13 +38,13 @@
 <section id="city-container">
 <div class="row">
     <div class="col-6">
-        <h1> CityName </h1>
+        <h1 id="current-city"> CityName </h1>
         <ul>
             <li>
-                <span>Tuesday 09:58, clear sky </span> 
+                <span id= "current-time">Tuesday 09:58, clear sky </span> 
             </li>
             <li> 
-                <span> Humidity: 89%, Wind: 2.68km/h </span>
+                <span id="additional-info"> Humidity: 89%, Wind: 2.68km/h </span>
             </li>
         </ul>
     </div>
@@ -52,7 +53,7 @@
             <span id="temp-icon">
                 <i class="fas fa-bolt"></i>
             </span>
-            <span id="temperature">  24 </span>
+            <span id="current-temp">  24 </span>
             <small class= "unit"> 
                 <a href=""> °C </a>
             </small>
