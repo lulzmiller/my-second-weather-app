@@ -22,17 +22,23 @@ function getNewCity(event) {
   
 }
 function showInfo(response) {
+    console.log(response);
     let newCity = response.data.name;
     let newTemp = Math.round(response.data.main.temp);
     let newWeatherDesc = response.data.weather[0].description;
     let windSpeed = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
     let feelsLike = response.data.main.feels_like; 
+    let newIcon = response.data.weather[0].icon;
     let currentTimeDisplay = document.querySelector("#current-time");
+    let currentWeatherDesc = document.querySelector("#weather-desc");
+    let currentWeatherIcon = document.querySelector("#icon");
+    currentWeatherDesc.innerHTML = `, ${newWeatherDesc}`;
     currentTimeDisplay.innerHTML = formatDate(response.data.dt * 1000);
     currentCity.innerHTML = newCity;
     currentTemp.innerHTML = newTemp;
     additionalInfo.innerHTML = `Humidity: ${humidity}%, Wind: ${windSpeed} km/h`;
+    currentWeatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${newIcon}@2x.png`);
 }
 function formatDate(timestamp) {
     let weekDays = [
@@ -51,12 +57,9 @@ function formatDate(timestamp) {
     }
     let minutes = date.getMinutes();
     if (minutes < 10) {
-        minutes = `0${minutes}`;
-        
+        minutes = `0${minutes}`;  
     }
     let day = weekDays[date.getDay()]
-    
-    
     return `${day}, ${hours}:${minutes}`
 }
 
