@@ -22,9 +22,7 @@ function getNewCity(event) {
   
 }
 function showInfo(response) {
-    console.log(response);
     let newCity = response.data.name;
-    let newTemp = Math.round(response.data.main.temp);
     let newWeatherDesc = response.data.weather[0].description;
     let windSpeed = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
@@ -33,12 +31,15 @@ function showInfo(response) {
     let currentTimeDisplay = document.querySelector("#current-time");
     let currentWeatherDesc = document.querySelector("#weather-desc");
     let currentWeatherIcon = document.querySelector("#icon");
+    celsiusTemp = Math.round(response.data.main.temp);
     currentWeatherDesc.innerHTML = `, ${newWeatherDesc}`;
     currentTimeDisplay.innerHTML = formatDate(response.data.dt * 1000);
     currentCity.innerHTML = newCity;
-    currentTemp.innerHTML = newTemp;
+    currentTemp.innerHTML = celsiusTemp;
     additionalInfo.innerHTML = `Humidity: ${humidity}%, Wind: ${windSpeed} km/h`;
     currentWeatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${newIcon}@2x.png`);
+
+    
 }
 function formatDate(timestamp) {
     let weekDays = [
@@ -62,8 +63,26 @@ function formatDate(timestamp) {
     let day = weekDays[date.getDay()]
     return `${day}, ${hours}:${minutes}`
 }
+function displayFahrenheit(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temp");
+    let fahrenheitTemperature = (celsiusTemp * 9) /5 +32;
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+}
+function displayCelsius(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#current-temp");
+    temperatureElement.innerHTML = celsiusTemp;
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+}
 
 getUserPosition();
+
+
+let celsiusTemp = null;
 
 let currentCity = document.querySelector("#current-city");
 let currentTemp = document.querySelector("#current-temp");
@@ -73,3 +92,10 @@ searchForm.addEventListener("submit", getNewCity);
 
 let crnLocationBtn = document.querySelector ("#crn-location-btn");
 crnLocationBtn.addEventListener("click", getUserPosition);
+
+let fahrenheitLink = document.querySelector ("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+let celsiusLink = document.querySelector ("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
+
+
