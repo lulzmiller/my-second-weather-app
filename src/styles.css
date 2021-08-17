@@ -5,6 +5,8 @@ yellow: #FBBB2B
 lighter yellow: #FFF3B0
 grey: #1B3137
 antrasitt: #3A3A3A
+blue: #335c67
+darkblue: #1B3137
 */
 
 body {
@@ -12,6 +14,16 @@ body {
     font-family: 'Spartan', sans-serif;
     font-weight:400;
     background: radial-gradient( rgb(255, 241, 165) 1.9%, rgb(200, 125, 76) 49.7%, rgb(83, 54, 54) 100.5%);
+}
+section a {
+    text-decoration: none;
+    color:#1B3137;
+    
+}
+section a:hover{
+    color:#FBBB2B;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 footer p {
@@ -28,21 +40,12 @@ footer a:hover{
     color:#1B3137;
     font-weight: 700;
 }
-section a {
-    text-decoration: none;
-    color:#1B3137;
-    
-}
-section a:hover{
-    color:#FBBB2B;
-    font-size: 18px;
-    font-weight: 700;
-}
 
 #app-container {
     background:#FFF;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    width: 800px;
+    width: 80%;
+    min-width: 300px;
 }
 #app-container,#footer {
     border:1px solid transparent;
@@ -71,7 +74,6 @@ section a:hover{
 color: #fff;
 background:#540B0E ;
 }
-
 #city-container, #quote-container {
     padding: 30px;
 }
@@ -80,7 +82,6 @@ list-style: none;
 padding: 0;
 margin: 0;
 }
-
 
 #temperature-container {
     font-size: 70px;
@@ -110,6 +111,23 @@ margin: 0;
     padding: 20px;
 
   }
-
+  .forecast-day
+{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.forecast-icon {
+    
+}
+.forecast-temp-max, .forecast-temp-min
+{
+    font-size: 15px;
+    padding: 0 3px;
+}
+.forecast-temp-min {
+    color:#540B0E;
+opacity: 0.7;
+}
 
 

@@ -8,9 +8,6 @@ function handlePosition(position) {
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(apiURL).then(showInfo);
   }
-  function backToLocal(event) {
-    
-}
 
 function getNewCity(event) {
     event.preventDefault();
@@ -31,6 +28,7 @@ function showInfo(response) {
     let currentTimeDisplay = document.querySelector("#current-time");
     let currentWeatherDesc = document.querySelector("#weather-desc");
     let currentWeatherIcon = document.querySelector("#icon");
+
     celsiusTemp = Math.round(response.data.main.temp);
     currentWeatherDesc.innerHTML = `, ${newWeatherDesc}`;
     currentTimeDisplay.innerHTML = formatDate(response.data.dt * 1000);
@@ -39,8 +37,11 @@ function showInfo(response) {
     additionalInfo.innerHTML = `Humidity: ${humidity}%, Wind: ${windSpeed} km/h`;
     currentWeatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${newIcon}@2x.png`);
 
+    getForecast(response.data.coord);
     
 }
+
+
 function formatDate(timestamp) {
     let weekDays = [
         "Sunday",
@@ -78,8 +79,53 @@ function displayCelsius(event) {
     fahrenheitLink.classList.remove("active");
     celsiusLink.classList.add("active");
 }
+function getForecast (coordinates) {
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let apiKey = "590447721ec9809f25311836ff52f884";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayForecast)
+    
+}
+function displayForecast(response){
+    console.log(response.data.daily);
+
+    console.log(formatDate (response.data.daily[0].dt));
+    
+
+    let forecastContainer = document.querySelector("#forecast-container");
+    let forecastHTML = `<div class="row">`;
+
+    let days = ["Thur","Fri","Sat", "Sun"];
+
+    days.forEach(function(day) {
+    forecastHTML = forecastHTML + `
+    
+    <div class="col-2 forecast">
+    <h6 class="forecast-day">
+        ${day}
+    </h6>
+
+        <div class="forecast-icon">
+            <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="forecast-icon" width="100">
+        </div>
+        <span class="forecast-temp-max">
+            24
+        </span>
+    <span class="forecast-temp-min">
+            13
+        </span>
+    </div>
+    `;
+    })
+    
+    forecastHTML = forecastHTML + `</div>`;
+    forecastContainer. innerHTML = forecastHTML;
+}
+
 
 getUserPosition();
+
 
 
 let celsiusTemp = null;
@@ -98,4 +144,102 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celsiusLink = document.querySelector ("#celsius");
 celsiusLink.addEventListener("click", displayCelsius);
 
+
+/* ADD DARK STYLING
+let darkStyle = document.createElement("style")
+darkStyle.innerHTML = 
+'body {' +
+    'padding:10%;' +
+    'font-family: "Spartan", sans-serif; ' +
+    'font-weight:400;' +
+    'background: radial-gradient(rgb(51, 92, 103) 11.2%, rgb(58, 58, 58) 91.1%);' +
+'section a {' +
+    'text-decoration: none;'+
+    'color:#1B3137;}' +
+
+'section a:hover{'+
+    'color:#9E2A2B;'
+    'font-size: 18px;'
+    'font-weight: 700;}'+
+
+'footer p {'+
+    'color:rgba(27, 49, 55, 0.5);'+
+    'font-size: 13px;'+
+    'text-align: center;'+
+    'margin: 0;}'
+'footer a {'+
+    'text-decoration: none;'+
+    'color:#9E2A2B;}'+
+
+'footer a:hover{'+
+    'color:#1B3137;'+
+    'font-weight: 700;}'+
+
+'#app-container {'+
+    'background:#FFF;'+
+    'box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;'+
+    'width: 80%;'+
+    'min-width: 300px;}'+
+'#app-container,#footer {'+
+    'border:1px solid transparent;'+
+    'border-radius: 10px;'+
+    'padding: 30px 30px;'+
+    'margin: 0 auto;}'+
+
+'#searchbar-container {'+
+    'padding: 30px 10px;}'+
+'#searchbar {'+
+   'box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;'+
+    'border: none;}'+
+ 
+'#submit-btn, #crn-location-btn {'+
+    'color:#3A3A3A;'+
+    'border:none;'+
+    'margin: 0 1px 0 2px;'+
+    'padding: 5px 15px;'+
+    'font-size: 25px;'+
+    'box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;'+
+    'transition: 200ms ease-in-out;}'+
+
+'#submit-btn:hover, #crn-location-btn:hover {'+
+'color: #fff;'+
+'background:#3A3A3A ;}'+
+
+'#city-container, #quote-container {'+
+    'padding: 30px;}'+
+
+'#city-container ul  {'+
+'list-style: none;'+
+'padding: 0;'+
+'margin: 0;}'+
+
+'#temperature-container {'+
+    'font-size: 70px;'+
+    'text-align: right;}'+
+
+'#temperature-container .units {'+
+    'position: relative;'+
+    'bottom:45px;'+
+    'right: 15px;'+
+    'font-size: 15px;}'+
+
+'#temperature-container .active:hover {'+
+    'color: #9E2A2B;'+
+    'font-size: 15px;'+
+    'font-weight: 500;'+
+    'cursor: default;}'+
+
+'.forecast {'+
+    'text-align: center;'+
+    'width: 190px;'+
+    'padding: 20px;}';
+
+    let ref = document.querySelector('script');
+    let parentDiv = ref.head;
+    parentDiv.insertBefore(darkStyle, ref);
+
+    */
+
+
+    //Forecast
 
