@@ -1,49 +1,46 @@
 /* colorpalette
 brown: #540B0E
 red: #9E2A2B
-yellow: #FBBB2B
-lighter yellow: #FFF3B0
 grey: #1B3137
-antrasitt: #3A3A3A
-blue: #335c67
-darkblue: #1B3137
+blue:#242D39
+
 */
 
 body {
     padding:10%;
     font-family: 'Spartan', sans-serif;
     font-weight:400;
-    background: radial-gradient( rgb(255, 241, 165) 1.9%, rgb(200, 125, 76) 49.7%, rgb(83, 54, 54) 100.5%);
+    color: #fff;
+    background: radial-gradient(rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
 }
 section a {
     text-decoration: none;
-    color:#1B3137;
+    color:#fff;
     
 }
 section a:hover{
-    color:#FBBB2B;
+    color:#335c67;
     font-size: 18px;
     font-weight: 700;
 }
 
 footer p {
-    color:rgba(27, 49, 55, 0.5);
+    color:#335c67;
     font-size: 13px;
     text-align: center;
     margin: 0;
 }
 footer a {
-    text-decoration: none;
-    color:#FBBB2B
+    color:#335c67;
 }
 footer a:hover{
-    color:#1B3137;
+    color:#fff;
     font-weight: 700;
 }
 
 #app-container {
-    background:#FFF;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background: rgb(16, 37, 60);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 80%;
     min-width: 300px;
 }
@@ -62,7 +59,8 @@ footer a:hover{
 }
  
 #submit-btn, #crn-location-btn {
-    color:#540B0E;
+    color: #fff;
+    background:#335c67 ;
     border:none;
     margin: 0 1px 0 2px;
     padding: 5px 15px;
@@ -71,8 +69,8 @@ footer a:hover{
     transition: 200ms ease-in-out;
 }
 #submit-btn:hover, #crn-location-btn:hover {
-color: #fff;
-background:#540B0E ;
+color: #335c67;
+background:#fff ;
 }
 #city-container, #quote-container {
     padding: 30px;
@@ -87,11 +85,6 @@ margin: 0;
     font-size: 70px;
     text-align: right;
 }
-#temp-icon {
-    text-shadow: 0px 7px 9px rgba(251, 187, 43, 0.5);
-    color:#FBBB2B;
-    padding-left: 10px;
-}
 #temperature-container .units {
     position: relative;
     bottom:45px;
@@ -99,7 +92,7 @@ margin: 0;
     font-size: 15px;
 }
 #temperature-container .active:hover {
-    color: #1B3137;
+    color: #fff;
     font-size: 15px;
     font-weight: 500;
     cursor: default;
@@ -127,7 +120,7 @@ margin: 0;
     padding: 0 3px;
 }
 .forecast-temp-min {
-    color:#540B0E;
+    color:#335c67;
     opacity: 0.7;
 }
 

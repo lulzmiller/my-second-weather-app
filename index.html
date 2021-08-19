@@ -11,14 +11,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;400;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="src/styles.css">
+<link class="stylesheet" rel="stylesheet" href="src/defaultstyles.css">
 </head>
 <body>
 <div class="container">
     <div id="app-container">
 <header id="header">
 <a href="https://www.linkedin.com/in/luise-berge-m%C3%BCller-490864205/" target="_blank">
-    <img src="media/aboutme.svg" alt="Linkedin" width= 80px>
+    <img src="media/aboutme.svg" alt="linkedin" width= 80px>
 </a>
 </header>
 
@@ -39,6 +39,7 @@
 <div class="row">
     <div class="col-6">
         <h1 id="current-city"> Your City </h1>
+        
         <ul>
             <li>
                 <span id= "current-time"></span> <span id="weather-desc"></span> 
@@ -69,6 +70,12 @@
             and is open-sourced on 
         <a href="https://github.com/lulzmiller/my-second-weather-app" target="_blank"> GitHub</a>.
     </p>
+    <p>
+        <a id="stylingSwitch" href="#">
+            activate dark mode
+       </a>
+    </p>
+   
     </footer>
 </div>
 </div>

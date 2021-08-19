@@ -1,0 +1,139 @@
+/* colorpalette
+brown: #540B0E
+red: #9E2A2B
+yellow: #FBBB2B
+lighter yellow: #FFF3B0
+grey: #1B3137
+antrasitt: #3A3A3A
+blue: #335c67
+darkblue: #1B3137
+*/
+
+body {
+    padding:10%;
+    font-family: 'Spartan', sans-serif;
+    font-weight:400;
+    background: radial-gradient( rgb(255, 241, 165) 1.9%, rgb(200, 125, 76) 49.7%, rgb(83, 54, 54) 100.5%);
+}
+header a  {
+    text-decoration: none;
+    color: #BABABA;
+}
+
+section a {
+    text-decoration: none;
+    color:#1B3137;
+    
+}
+section a:hover{
+    color:#FBBB2B;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+footer p {
+    color:rgba(27, 49, 55, 0.5);
+    font-size: 13px;
+    text-align: center;
+    margin: 0;
+}
+footer a {
+    text-decoration: none;
+    color:#FBBB2B
+}
+footer a:hover{
+    color:#1B3137;
+    font-weight: 700;
+}
+
+#app-container {
+    background:#FFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    width: 80%;
+    min-width: 300px;
+}
+#app-container,#footer {
+    border:1px solid transparent;
+    border-radius: 10px;
+    padding: 30px 30px;
+    margin: 0 auto;
+}
+#searchbar-container {
+    padding: 30px 10px;
+}
+#searchbar {
+   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border: none;
+}
+ 
+#submit-btn, #crn-location-btn {
+    color:#540B0E;
+    border:none;
+    margin: 0 1px 0 2px;
+    padding: 5px 15px;
+    font-size: 25px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    transition: 200ms ease-in-out;
+}
+#submit-btn:hover, #crn-location-btn:hover {
+color: #fff;
+background:#540B0E ;
+}
+#city-container, #quote-container {
+    padding: 30px;
+}
+#city-container ul  {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+#temperature-container {
+    font-size: 70px;
+    text-align: right;
+}
+#temp-icon {
+    text-shadow: 0px 7px 9px rgba(251, 187, 43, 0.5);
+    color:#FBBB2B;
+    padding-left: 10px;
+}
+#temperature-container .units {
+    position: relative;
+    bottom:45px;
+    right: 13px;
+    font-size: 15px;
+}
+#temperature-container .active:hover {
+    color: #1B3137;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.forecast {
+    text-align: center;
+    width: 190px;
+    padding: 20px;
+
+  }
+  .forecast-day
+{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+    opacity: 0.7;
+}
+.forecast-icon img {
+    width:80px;
+}
+.forecast-temp-max, .forecast-temp-min
+{
+    font-size: 15px;
+    padding: 0 3px;
+}
+.forecast-temp-min {
+    color:#540B0E;
+    opacity: 0.7;
+}
+
+

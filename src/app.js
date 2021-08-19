@@ -158,6 +158,17 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celsiusLink = document.querySelector ("#celsius");
 celsiusLink.addEventListener("click", displayCelsius);
 
+let darkModeLink = document.querySelector("#stylingSwitch");
+darkModeLink.addEventListener("click", changeStyleSheet)
+
+function changeStyleSheet(event) {
+    event.preventDefault();
+    let styleSheet = document.querySelector(".stylesheet");
+    let stylingSwitch = document.querySelector("#stylingSwitch");
+    styleSheet.setAttribute("href","src/darkMode.css");
+    stylingSwitch.innerHTML = ``;
+    
+}
 
 /* ADD DARK STYLING
 let darkStyle = document.createElement("style")
