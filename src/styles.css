@@ -116,9 +116,10 @@ margin: 0;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 0;
+    opacity: 0.7;
 }
-.forecast-icon {
-    
+.forecast-icon img {
+    width:80px
 }
 .forecast-temp-max, .forecast-temp-min
 {
@@ -127,7 +128,7 @@ margin: 0;
 }
 .forecast-temp-min {
     color:#540B0E;
-opacity: 0.7;
+    opacity: 0.7;
 }
 
 

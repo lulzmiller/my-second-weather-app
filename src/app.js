@@ -88,40 +88,54 @@ function getForecast (coordinates) {
     
 }
 function displayForecast(response){
-    console.log(response.data.daily);
-
-    console.log(formatDate (response.data.daily[0].dt));
     
-
     let forecastContainer = document.querySelector("#forecast-container");
     let forecastHTML = `<div class="row">`;
-
-    let days = ["Thur","Fri","Sat", "Sun"];
-
-    days.forEach(function(day) {
-    forecastHTML = forecastHTML + `
+    let forecastDays = response.data.daily;
+    forecastDays
+    forecastDays.forEach(function(day, index) {
+        if (index < 6 && index > 0) {
+            
+        forecastHTML = forecastHTML + `
+        
+        <div class="col-2 forecast">
+        <h6 class="forecast-day">
+            ${formatDay(day.dt)}
+        </h6>
     
-    <div class="col-2 forecast">
-    <h6 class="forecast-day">
-        ${day}
-    </h6>
-
-        <div class="forecast-icon">
-            <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="forecast-icon" width="100">
+            <div class="forecast-icon">
+                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="forecast-icon" width="100">
+            </div>
+            <span class="forecast-temp-max">
+                ${Math.round(day.temp.max)}°
+            </span>
+        <span class="forecast-temp-min">
+                ${Math.round(day.temp.min)}°
+            </span>
         </div>
-        <span class="forecast-temp-max">
-            24
-        </span>
-    <span class="forecast-temp-min">
-            13
-        </span>
-    </div>
-    `;
-    })
-    
-    forecastHTML = forecastHTML + `</div>`;
+        `;
+        }})
+        forecastHTML = forecastHTML + `</div>`;
     forecastContainer. innerHTML = forecastHTML;
+    }
+
+
+function formatDay(date) {
+    let weekDays = [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+      ];
+    let day = new Date (date * 1000);
+    day = weekDays[day.getDay()]
+    return day;
 }
+    
+
 
 
 getUserPosition();
