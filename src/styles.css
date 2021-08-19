@@ -95,7 +95,7 @@ margin: 0;
 #temperature-container .units {
     position: relative;
     bottom:45px;
-    right: 15px;
+    right: 13px;
     font-size: 15px;
 }
 #temperature-container .active:hover {
