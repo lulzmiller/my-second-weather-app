@@ -165,8 +165,10 @@ function changeStyleSheet(event) {
     event.preventDefault();
     let styleSheet = document.querySelector(".stylesheet");
     let stylingSwitch = document.querySelector("#stylingSwitch");
+    let linkedinIcon = document.querySelector("#linkedin");
     styleSheet.setAttribute("href","src/darkMode.css");
     stylingSwitch.innerHTML = ``;
+    linkedinIcon.setAttribute("src","media/aboutmeDark.svg");
     
 }
 
