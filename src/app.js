@@ -167,7 +167,7 @@ function changeStyleSheet(event) {
     let stylingSwitch = document.querySelector("#stylingSwitch");
     let linkedinIcon = document.querySelector("#linkedin");
     styleSheet.setAttribute("href","src/darkMode.css");
-    stylingSwitch.innerHTML = ``;
+    stylingSwitch.innerHTML = `to go back to light mode, please reload. :-)`;
     linkedinIcon.setAttribute("src","media/aboutmeDark.svg");
     
 }
